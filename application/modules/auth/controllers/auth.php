@@ -5,12 +5,11 @@ class Auth extends MX_Controller {
 
 	public function __construct() {
 		parent::__construct();
+		$this->load->model('auth_model');
 	}
 	public function index()
 	{
-		print_r($this->load->model('auth/auth'));
-		$query=$this->auth->get_all();
-		// print_r($query);
+		print_r($this->auth_model->get_all());
 	}
 	public function logout()
 	{
